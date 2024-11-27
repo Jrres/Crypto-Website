@@ -5,7 +5,9 @@ import { TiLocationArrow } from "react-icons/ti";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
+import RotateImage from "./RotateIcon";
 import VideoPreview from "./VideoPreview";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,29 +103,27 @@ const Hero = () => {
       >
         <div>
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-            <VideoPreview>
+           
               <div
-                onClick={handleMiniVdClick}
+               
                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
               >
                 <video
                   ref={nextVdRef}
-                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                  src="videos/hero-1.mp4"
                   loop
-                  muted
                   id="current-video"
                   className="size-64 origin-center scale-150 object-cover object-center"
                   onLoadedData={handleVideoLoad}
                 />
               </div>
-            </VideoPreview>
+           
           </div>
 
           <video
             ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
             loop
-            muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
@@ -139,19 +139,31 @@ const Hero = () => {
             onLoadedData={handleVideoLoad}
           />
         </div>
-
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          G<b>A</b>MING
-        </h1>
-
+            
         <div className="absolute left-0 top-0 z-40 size-full">
+          
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-100">
-              redefi<b>n</b>e
-            </h1>
+          <div className="w-full d-flex flex-col justify-between items-center h-[300px]">
+            <div className="flex justify-center items-center mt-10">
+             <img src="img/eggplant.png" className="w-[50px]"></img>
+             <img
+              src="img/dddLogo.png" // Replace with your image path
+              alt="Rotating 3D image"
+              className="image"
+            />
+              <img src="img/eggplant.png" className="w-[50px]"></img>
+            </div>
+          </div>
+          <div className="w-full d-flex flex-col justify-between items-center ">
+          <div className="flex justify-center items-center mt-auto mb-10">
+            <RotateImage> </RotateImage>
+          </div>
 
-            <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the Metagame Layer <br /> Unleash the Play Economy
+          </div>
+
+
+            <p className="mb-5 text-[60px] max-w-64 font-robert-regular text-blue-100 supersayan-bg">
+                  $FAP
             </p>
 
             <Button
@@ -164,9 +176,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        G<b>A</b>MING
-      </h1>
+     
     </div>
   );
 };

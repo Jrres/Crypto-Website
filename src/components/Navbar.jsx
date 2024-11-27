@@ -3,10 +3,41 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-
+import { FaXTwitter } from "react-icons/fa6";
+import { FaTelegram } from "react-icons/fa";
+import { BiDollar } from "react-icons/bi";
 import Button from "./Button";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = ["Buy Now", "X", "Telegram"];
+const navDict = [
+  {
+    name: "Buy Now",
+    element: (
+      <BiDollar />
+    ),
+  },
+  {
+    name: "X",
+    element: (
+      <FaXTwitter />
+    ),
+  },
+  {
+    name: "Telegram",
+    element: (
+      <FaTelegram />
+    ),
+  },
+];
+
+const getIcon = (name) => {
+  // Find the object with the matching name and return the element
+  const item = navDict.find((el) => el.name === name);
+  return item ? item.element : null;
+};
+
+// Example usage:
+console.log(getIcon("Buy Now"));
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -67,59 +98,49 @@ const NavBar = () => {
       ref={navContainerRef}
       className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
     >
-      <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
-          <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+     <header className="absolute top-1/2 w-full -translate-y-1/2">
+  <nav className="flex items-center justify-between p-4">
+    {/* Navigation Links and Audio Button */}
+    <div className="flex h-full items-center">
+      <div className="hidden md:flex flex-row space-x-4">
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={`#${item.toLowerCase()}`}
+            className="nav-hover-btn"
+          
+          >
+            {getIcon(item)}
+          </a>
+        ))}
+      </div>
 
-            <Button
-              id="product-button"
-              title="Products"
-              rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-            />
-          </div>
+      <button
+        onClick={toggleAudioIndicator}
+        className="ml-10 flex items-center space-x-0.5"
+      >
+        <audio
+          ref={audioElementRef}
+          className="hidden"
+          src="/audio/loop.mp3"
+          loop
+        />
+        {[1, 2, 3, 4].map((bar) => (
+          <div
+            key={bar}
+            className={clsx("indicator-line", {
+              active: isIndicatorActive,
+            })}
+            style={{
+              animationDelay: `${bar * 0.1}s`,
+            }}
+          />
+        ))}
+      </button>
+    </div>
+  </nav>
+</header>
 
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            <button
-              onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
-            >
-              <audio
-                ref={audioElementRef}
-                className="hidden"
-                src="/audio/loop.mp3"
-                loop
-              />
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
-          </div>
-        </nav>
-      </header>
     </div>
   );
 };

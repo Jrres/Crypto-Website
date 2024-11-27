@@ -1,10 +1,69 @@
 import { useState, useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import AnimatedTitle from "./AnimatedTitle";
+import Phantom from "./PhantomConnect";
+import ConvertStep from "./ConvertStep";
+export const Steps = () => {
+  const steps = [
+    {
+      id: 1,
+      icon: "fa-wallet",
+      title: "Step 1",
+      description: "Link your Phantom wallet on Dexscreener.",
+      element: <Phantom/>
+    },
+    {
+      id: 2,
+      icon: "fa-coins",
+      title: "Step 2",
+      description: "Buy Solana token.",
+      element: <img src="img/solana.svg"/>
+    },
+    {
+      id: 3,
+      icon: "fa-arrow-right-arrow-left",
+      title: "Step 3",
+      description: "Convert Solana token to Fap token.",
+      element: <ConvertStep/>
+    },
+    {
+      id: 4,
+      icon: "fa-rocket",
+      title: "Step 4",
+      description: "Ride it out to the moon.",
+      element: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+      <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+    </svg>
+    },
+  ];
 
+  return (
+    <ul className="steps-list">
+      {steps.map((step) => (
+        <li key={step.id} className="card text-white">
+          
+          <div className="p-6 flex flex-row  justify-between">
+
+            <div class="w-[20px]">
+            <i className={`fa-solid ${step.icon} icon`}></i>
+            </div>
+            <div>
+            <span className="content">{step.description}</span>
+            </div>
+            <div className="w-[50px] h-[200px]">
+              {step.element}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};
 export const BentoTilt = ({ children, className = "" }) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef(null);
-
+  
+  
   const handleMouseMove = (event) => {
     if (!itemRef.current) return;
 
@@ -58,11 +117,9 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 
   return (
     <div className="relative size-full">
-      <video
+      <img
         src={src}
-        loop
-        muted
-        autoPlay
+        
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
@@ -102,89 +159,75 @@ const Features = () => (
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
-        <p className="font-circular-web text-lg text-blue-50">
-          Into the Metagame Layer
-        </p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience
-          on your world.
-        </p>
+      <AnimatedTitle
+            title="How To Buy?"
+            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
+          />
+      <Steps />
       </div>
-
+      <div >
+      <AnimatedTitle
+            title="Invest Securely"
+            containerClass="p-6  mt-5 pointer-events-none mix-blend-difference relative z-10"
+          />
+      </div>          
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="videos/feature-1.mp4"
+          src="img/hardongif.gif"
           title={
             <>
-              radia<b>n</b>t
+              liquidity pool burned
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          isComingSoon
+          description="Not mintable or freezable either. Your position is as rock solid as you are ;3"
+          
         />
       </BentoTilt>
 
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-2 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="videos/feature-2.mp4"
+            src="img/gooner.gif"
             title={
               <>
-                zig<b>m</b>a
+                Pump your b<b>a</b>gs dump your nads
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-            isComingSoon
+            description="Go ham on this coin like you would on your dick. What goes around cums around."
+            
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="videos/feature-3.mp4"
+            src="img/chart.gif"
             title={
               <>
-                n<b>e</b>xus
+                Unlimited Potential
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            isComingSoon
+            description="The market cap is enough to pick up all the prostitutes."
+            
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
-            src="videos/feature-4.mp4"
+            src="img/shrek.jpg"
             title={
               <>
-                az<b>u</b>l
+                Don't Miss Out On The Pump
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
-            isComingSoon
+            description="At launch, there will be millions of dollars poured in. Be one of the first to milk this opportunity"
+            
           />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
-            <h1 className="bento-title special-font max-w-64 text-black">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
-            </h1>
+        
 
-            <TiLocationArrow className="m-5 scale-[5] self-end" />
-          </div>
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_2">
-          <video
-            src="videos/feature-5.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
-          />
-        </BentoTilt>
       </div>
+      
     </div>
   </section>
 );
