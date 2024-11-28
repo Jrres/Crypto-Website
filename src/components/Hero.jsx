@@ -165,13 +165,6 @@ const Hero = () => {
             <p className="mb-5 text-[60px] max-w-64 font-robert-regular text-blue-100 supersayan-bg">
                   $FAP
             </p>
-
-            <Button
-              id="watch-trailer"
-              title="Watch trailer"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
           </div>
         </div>
       </div>

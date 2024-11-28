@@ -3,6 +3,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import AnimatedTitle from "./AnimatedTitle";
 import Phantom from "./PhantomConnect";
 import ConvertStep from "./ConvertStep";
+import SplotchEffect from "./Splotch";
 export const Steps = () => {
   const steps = [
     {
@@ -38,11 +39,11 @@ export const Steps = () => {
   ];
 
   return (
-    <ul className="steps-list">
+    <ul className="steps-list flex-center flex flex-col">
       {steps.map((step) => (
-        <li key={step.id} className="card text-white">
+        <li key={step.id} className="card text-white w-1/2 ">
           
-          <div className="p-6 flex flex-row  justify-between">
+          <div className="p-6 flex justify-between">
 
             <div class="w-[20px]">
             <i className={`fa-solid ${step.icon} icon`}></i>
@@ -117,6 +118,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 
   return (
     <div className="relative size-full">
+      
       <img
         src={src}
         
@@ -161,7 +163,7 @@ const Features = () => (
       <div className="px-5 py-32">
       <AnimatedTitle
             title="How To Buy?"
-            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
+            containerClass="mt-5 p-5 pointer-events-none mix-blend-difference relative z-10"
           />
       <Steps />
       </div>
