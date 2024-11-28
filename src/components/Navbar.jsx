@@ -6,26 +6,26 @@ import { TiLocationArrow } from "react-icons/ti";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { BiDollar } from "react-icons/bi";
-import Button from "./Button";
 
+const iconSize = 30;
 const navItems = ["Buy Now", "X", "Telegram"];
 const navDict = [
   {
     name: "Buy Now",
     element: (
-      <BiDollar />
+      <BiDollar size={iconSize} />
     ),
   },
   {
     name: "X",
     element: (
-      <FaXTwitter />
+      <FaXTwitter size={iconSize}/>
     ),
   },
   {
     name: "Telegram",
     element: (
-      <FaTelegram />
+      <FaTelegram size={iconSize}/>
     ),
   },
 ];
@@ -58,14 +58,7 @@ const NavBar = () => {
     setIsIndicatorActive((prev) => !prev);
   };
 
-  // Manage audio playback
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
-      audioElementRef.current.pause();
-    }
-  }, [isAudioPlaying]);
+
 
   useEffect(() => {
     if (currentScrollY === 0) {
@@ -102,41 +95,18 @@ const NavBar = () => {
   <nav className="flex items-center justify-between p-4">
     {/* Navigation Links and Audio Button */}
     <div className="flex h-full items-center">
-      <div className="hidden md:flex flex-row space-x-4">
+      <div className="hidden md:flex flex-row space-x-4 ">
         {navItems.map((item, index) => (
           <a
             key={index}
             href={`#${item.toLowerCase()}`}
-            className="nav-hover-btn"
+            className="nav-hover-btn "
           
           >
             {getIcon(item)}
           </a>
         ))}
       </div>
-
-      <button
-        onClick={toggleAudioIndicator}
-        className="ml-10 flex items-center space-x-0.5"
-      >
-        <audio
-          ref={audioElementRef}
-          className="hidden"
-          src="/audio/loop.mp3"
-          loop
-        />
-        {[1, 2, 3, 4].map((bar) => (
-          <div
-            key={bar}
-            className={clsx("indicator-line", {
-              active: isIndicatorActive,
-            })}
-            style={{
-              animationDelay: `${bar * 0.1}s`,
-            }}
-          />
-        ))}
-      </button>
     </div>
   </nav>
 </header>
