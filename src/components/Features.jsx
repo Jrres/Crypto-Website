@@ -3,7 +3,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import AnimatedTitle from "./AnimatedTitle";
 import Phantom from "./PhantomConnect";
 import ConvertStep from "./ConvertStep";
-import SplotchEffect from "./Splotch";
+
 export const Steps = () => {
   const steps = [
     {
@@ -43,7 +43,7 @@ export const Steps = () => {
       {steps.map((step) => (
         <li key={step.id} className="card text-white w-1/2 ">
           
-          <div className="p-6 flex justify-between">
+          <div className="p-6 flex justify-between text-xl">
 
             <div class="w-[20px]">
             <i className={`fa-solid ${step.icon} icon`}></i>
