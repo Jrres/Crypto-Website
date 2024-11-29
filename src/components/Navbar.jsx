@@ -19,7 +19,8 @@ const navDict = [
   {
     name: "X",
     element: (
-      <FaXTwitter size={iconSize}/>
+      <a href="https://x.com/DstroyDckDec"><FaXTwitter size={iconSize}  /></a>
+      
     ),
   },
   {

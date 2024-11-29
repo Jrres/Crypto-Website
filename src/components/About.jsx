@@ -4,6 +4,15 @@ import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "./AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
+const screenSize = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+}
+const diff = {
+  width: screenSize.width - 1980,
+  height: screenSize.height - 1080
+}
+
 // Each item will be placed in the wojack picture
 // Items will desc each piece of the picture
 // Descs
@@ -21,42 +30,42 @@ gsap.registerPlugin(ScrollTrigger);
 const items = [
   {
     name:"Enlarged Testes",
-    desc:"caused by intense jerk off sessions during a bullrun",
+    desc:"Caused by intense jerk off sessions during a bullrun",
     pos: {
-      x: 600,
-      y: 750,
+      x: 600+diff.width,
+      y: 750+diff.height,
     }
   },
   {
     name:"Swole Arm",
-    desc:"formed through a strict pump and dump regiment",
+    desc:"Formed through a strict pump and dump regiment",
     pos: {
-      x: 300,
-      y: 300,
+      x: 300+diff.width,
+      y: 300+diff.height,
     }
   },
   {
-    name:"Sea of tissues",
-    desc:"resembles an addiction to crypto trading while watching hentai",
+    name:"Sea Of Tissues",
+    desc:"Resembles an addiction to crypto trading while watching hentai",
     pos: {
-      x: 0,
-      y: 700,
+      x: 0+diff.width,
+      y: 700+diff.height,
     }
   },
   {
-    name:"Pea Bottles",
+    name:"Pee Bottles",
     desc:"Solution to not having to use the toilet ever just to watch crypto all day",
     pos: {
-      x: 1000,
-      y: 700,
+      x: 1000+diff.width,
+      y: 700+diff.height,
     }
   },
   {
     name:"Cum Splotch",
     desc:"Better than a fresh coat of paint!",
     pos: {
-      x: 1200,
-      y: 200,
+      x: 1200+diff.width,
+      y: 200+diff.height,
     }
   },
 
@@ -72,7 +81,7 @@ const Descriptions = () => {
             top: `${item.pos.y}px`,
             left: `${item.pos.x}px`,
             padding: "8px",
-            background: "rgba(0, 0, 0, 0.7)",
+            background: "rgba(0, 0, 0, 1)",
             color: "#fff",
             borderRadius: "4px",
             fontSize: "14px",
@@ -161,10 +170,10 @@ const About = () => {
                   top: `${item.pos.y}px`,
                   left: `${item.pos.x}px`,
                   padding: "8px",
-                  background: "rgba(0, 0, 0, 0.7)",
+                  background: "rgba(0, 0, 0, 1)",
                   color: "#fff",
                   borderRadius: "4px",
-                  fontSize: "14px",
+                  fontSize: "30px",
                   zIndex: 2,
                   opacity: 0, // Initially hidden
                 }}

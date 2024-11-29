@@ -1,7 +1,5 @@
 import gsap from "gsap";
 import { useRef } from "react";
-
-import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
 
 
@@ -54,7 +52,7 @@ const FloatingImage = () => {
         
         <div className="relative size-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden Ge<b>m</b>"
+            title="C<b>u</b>rrent m<b>o</b>ney sh<b>o</b>t"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
           

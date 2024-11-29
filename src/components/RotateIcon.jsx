@@ -23,7 +23,7 @@ const RotateImage = () => {
       <img
         src="img/coin.png" // Replace with your image path
         alt="Rotating 3D image"
-        width="250px" height="100px"
+        width="650px" height="100px"
         style={{
           transform: `rotateX(${rotate.rotateX}deg) rotateY(${rotate.rotateY}deg) rotateZ(${rotate.rotateZ}deg)`,
         }}

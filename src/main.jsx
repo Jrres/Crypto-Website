@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import "./ParallaxEffect.css"; // For styling
 import App from './App.jsx'
 
 import { Web3ReactProvider } from '@web3-react/core';
