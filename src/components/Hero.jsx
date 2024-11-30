@@ -132,7 +132,7 @@ const Hero = () => {
 
           </div>
           <p
-            className="mb-10 p-2 translate-x-2 text-[60px] max-w-64 font-robert-regular text-blue-100 z-10"
+            className="mb-10 p-2  text-[60px] max-w-64 font-robert-regular text-blue-100 z-10"
             style={{
               backgroundImage: `url('/img/supersayan.gif')`,
               backgroundSize: '100%', // Scale the GIF to twice its size

@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useRef } from "react";
 import AnimatedTitle from "./AnimatedTitle";
+import RandomImageScroll from "./Coomer"
 
 
 const FloatingImage = () => {
@@ -55,7 +56,7 @@ const FloatingImage = () => {
             title="C<b>u</b>rrent m<b>o</b>ney sh<b>o</b>t"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
-          
+          <RandomImageScroll />
 
           <div className="d-flex flex-center">
             
