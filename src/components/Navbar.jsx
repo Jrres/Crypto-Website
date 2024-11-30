@@ -26,7 +26,7 @@ const navDict = [
   {
     name: "Telegram",
     element: (
-      <FaTelegram size={iconSize}/>
+      <a href="https://t.me/DestroyDick_December"><FaTelegram size={iconSize}/></a>
     ),
   },
 ];
