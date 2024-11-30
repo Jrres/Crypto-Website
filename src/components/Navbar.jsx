@@ -13,7 +13,7 @@ const navDict = [
   {
     name: "Buy Now",
     element: (
-      <BiDollar size={iconSize} />
+      <a href="https://pump.fun/coin/6cgHNrJZHfPLCQ5UVyenvm7sRgqQAabujPUjKZobpump"><BiDollar size={iconSize} /></a>
     ),
   },
   {
