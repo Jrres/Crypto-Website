@@ -131,11 +131,22 @@ const Hero = () => {
           </div>
 
           </div>
-
-
-            <p className="mb-5 text-[60px] max-w-64 font-robert-regular text-blue-100 supersayan-bg">
-                  $FAP
-            </p>
+          <p
+            className="mb-10 p-2 translate-x-2 text-[60px] max-w-64 font-robert-regular text-blue-100 z-10"
+            style={{
+              backgroundImage: `url('/img/supersayan.gif')`,
+              backgroundSize: '100%', // Scale the GIF to twice its size
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              height: '200px', // Increase height to give more space for the larger GIF
+              lineHeight: '250px', // Ensure text remains vertically aligned
+              textAlign: 'center', // Horizontally center the text
+              display: 'inline-block',
+              width: '100%', // Expand to fit the desired layout width
+            }}
+          >
+            $FAP
+          </p>
           </div>
         </div>
       </div>
